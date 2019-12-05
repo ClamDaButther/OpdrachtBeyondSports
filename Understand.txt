@@ -1,0 +1,124 @@
+
+////Mail Information\\\\
+BallData:
+ :X-Position,Y-Position,Z-Position,BallSpeed,[ClickerFlags]
+
+TrackedObject:
+ Team,TrackingID,PlayerNumber,X-Position,Y-Position,Speed;
+
+Frame:
+FrameCount:[TrackedObjects][BallData]
+
+
+
+////What The code probably is?\\\\
+??
+hoeveelste in de array,
+hoelang het duurt om naar de volgende positie te gaan,
+Positie waar hij nu staat , /105 = echte positie op het veld
+positie waar hij nu staat y, /68 = echte positie op het veld
+??
+
+
+
+
+////Information about the sport\\\\\
+hoelang is ee normaal voetbal veld: 105 bij 68 meter
+
+
+
+////How the array should read it Test version\\\\
+[ID,Unknow1,Frame,MoveTime,Posy,Posx,Unknown2]
+Stop reading after next : .
+StopReading at ; and lock remove from array ID.
+Begin Reading Again.
+Done.(becouse it stopped reading at : )
+
+
+
+
+
+1510428:
+
+1,1,10,-3017,2081,3.13;
+
+1,2,8,-835,-561,2.38;
+1,3,11,-2448,-528,1.73;
+0,4,15,-2334,2729,0.69;
+1,5,4,-347,1133,1.14;
+1,6,5,-346,1983,1.62;
+3,7,1,11,-3440,0.40;
+1,8,25,-3084,108,1.61;
+0,9,6,-2776,1828,0.57;
+4,10,-1,5550,4400,0.00;
+0,11,9,-561,1867,1.69;
+3,12,2,-3490,3685,0.44;
+1,13,7,-2546,2408,3.58;
+0,14,7,-2707,2070,3.37;
+4,15,-1,5550,4400,0.00;
+3,16,0,-1825,891,1.49;
+1,17,22,-3185,2834,1.72;
+0,18,11,-993,-1008,1.47;
+0,19,1,-4864,238,0.15;
+0,20,5,-3477,561,0.45;
+0,21,23,-1766,1393,2.50;
+1,22,3,-1284,2702,2.00;
+0,23,3,-3340,2120,0.30;
+1,24,20,-1723,1617,2.99;
+-1,25,-1,-2693,2013,0.00;
+1,26,24,3321,549,0.44;
+0,27,4,-3129,-496,0.84;
+4,28,-1,5550,4400,0.00;
+0,29,18,-2737,2313,1.04
+
+
+
+
+////Is this the ball or what is it?\\\\
+
+:-2712,2388,0,133.62,A,Alive;:
+
+
+
+
+
+
+array[ID, N1[i],N2[i],N3[i],N4[i],N5[i],N6[i]]
+
+After input is ; Lock ID and remove from Array.
+After ; read new line as i++.
+Stop at :.
+
+
+SubString
+substring split
+
+
+
+
+Array get out of bounds
+float.TryParse(my2d[Call,3],out float PosYREAL);
+(goes from string to float)
+debug.log gives 3 time's null and then he gives the normal number (-3017)
+When changing the 3 from the code ^ ot an 2 it gives 2 Null and not 3?
+ Debug.Log(my2d[Call,3]);
+Call = 0
+It only give's Null back (30 times) before giving array out of bounds
+
+So the problem was I din't set it in the right processing order.
+So it was null becouse it still was filling the array with numberbers
+and i tried to take it already before anything was there.
+
+my2d is now in VOID START but gives the problem,
+in the update with 
+
+
+
+
+Conclusion of script, I think its a limb or something else that is being tracked,
+and not a player or the ball.
+
+
+
+
+
